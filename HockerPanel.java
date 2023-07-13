@@ -281,18 +281,18 @@ public class HockerPanel extends JPanel implements MouseMotionListener{
 		} else if (cos == 0) {
 			this.h.vy *= -1;
 		} else {
-			if(Math.signum(xh-xc) == Math.signum(yh-yc)) {
-			//速度ベクトルを円に対しての法線ベクトルと接線ベクトルに分解
-			double e = (this.h.vy * sin - this.h.vx * cos);
-			double n = (-1) * (this.h.vx * sin + this.h.vy * cos);
-			//接戦ベクトルと法線ベクトルをx方向とy方向に戻す
-			this.h.vx = (-1) * e * cos + n * sin;
-			this.h.vy = e * sin + n * cos;
+			if (Math.signum(xh - xc) == Math.signum(yh - yc)) {
+				// 速度ベクトルを円に対しての法線ベクトルと接線ベクトルに分解
+				double e = (this.h.vy * sin - this.h.vx * cos);
+				double n = (-1) * (this.h.vx * sin + this.h.vy * cos);
+				// 接戦ベクトルと法線ベクトルをx方向とy方向に戻す
+				this.h.vx = (-1) * e * cos + n * sin;
+				this.h.vy = e * sin + n * cos;
 			} else {
-				//速度ベクトルを円に対しての法線ベクトルと接線ベクトルに分解
+				// 速度ベクトルを円に対しての法線ベクトルと接線ベクトルに分解
 				double e = (this.h.vy * sin + this.h.vx * cos);
 				double n = (-1) * (this.h.vy * cos - this.h.vx * sin);
-				//接戦ベクトルと法線ベクトルをx方向とy方向に戻す
+				// 接戦ベクトルと法線ベクトルをx方向とy方向に戻す
 				this.h.vx = e * cos - n * sin;
 				this.h.vy = e * sin + n * cos;
 			}
